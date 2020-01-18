@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Test2</title>
+	
+</head>
+<body>
+        <script type="text/javascript">
+            let montantfl;
+            let reste1;
+            let reste = 0;
+            let mt, nbcafe, nbinfo, nbmetro;
+
+            const montant = Number(prompt("Combien avez-vous reçu d'argent (Frs)?"));
+            console.log("montant recu: "+ montant);
+            if (montant > 0) {
+                montantfl = (montant * 3 ) / 4;
+                console.log("Livre et Fournitures: " + montantfl + "frs");
+
+                reste1 = montant - montantfl;
+                while(reste1 % 3 != 0){
+                    
+                    reste = reste + 1;
+                    reste1 = reste1 - 1;
+
+                }
+
+
+                mt = reste1 / 3;
+                nbcafe = mt / 2;
+                let a = nbcafe - Math.trunc(nbcafe);
+                reste = reste + 2 * a;
+
+                nbinfo = mt / 4;
+                let b = nbinfo - Math.trunc(nbinfo);
+                reste = reste + 4 * b;
+                
+                nbmetro = mt / 3;
+                let c = nbmetro - Math.trunc(nbmetro);
+                reste = reste + 3 * c;
+
+                console.log(" Vous pouvez ensuite acheter:");
+                console.log(Math.trunc(nbcafe) + "cafés");
+                console.log(Math.trunc(nbinfo) + "numéros du Flash Informatique");
+                console.log(Math.trunc(nbmetro) + "billets de métro");
+                console.log("et il vous restera " + reste + " Frs pour les roses blanches.");
+                
+            }
+            else{
+                console.log("Entrer un montant valide");   
+            }
+        </script>
+
+</body>
+</html>
